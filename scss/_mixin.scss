@@ -1,0 +1,64 @@
+@use "variable" as var;
+
+@mixin top($pt:20px,$pb:20px,$bg:var.$whaite){
+	padding-top: $pt;
+	padding-bottom: $pb;
+	background: $bg;
+}
+@mixin navbar($fsize:15px,$fline:17px,$fcolor:var.$black,$fweight:400,$pd:10px 26px,$bg:var.$primery,){
+	font-size: $fsize;
+	line-height: $fline;
+	color: $fcolor;
+	font-family: "Inter", sans-serif;
+	font-weight: $fweight;
+	padding:$pd;
+	background: $bg;
+	display: inline-block;
+}
+@mixin head($hfont:48px,$hline:66px,$hcolor:var.$whaite,$hweight:600,){
+	font-size: $hfont;
+	line-height:$hline;
+	color: $hcolor;
+	font-family: "Sora", sans-serif;
+	font-weight: $hweight;
+}
+@mixin btn($bfont:18px ,$bline:20px,$bcolor:var.$whaite,$back:var.$primery,$btop:18px 37px){
+	font-size: $bfont;
+	line-height: $bline;
+	color: $bcolor;
+	background: $back;
+	padding: $btop;
+	font-family: "Sora", sans-serif;
+	font-weight: 600;
+}
+
+
+/* Breakpoint sizes */
+$screen-xs-max: 479px;
+$screen-sm-max: 639px;
+$screen-md-max:  767px;
+$screen-lg-max: 979px;
+$screen-xl-max: 1024px;
+$screen-xxl-max: 1140px;
+
+/* Create the mixin (usually in a separate .scss file) */
+@mixin breakpoint($media) {
+  @if $media == xs {
+    @media only screen and (max-width: $screen-xs-max) { @content; }
+  }
+  @else if $media == sm {
+    @media only screen and (max-width: $screen-sm-max) { @content; }
+  }
+  @else if $media == md {
+    @media only screen and (max-width: $screen-md-max) { @content; }
+  }
+  @else if $media == lg {
+    @media only screen and (max-width: $screen-lg-max) { @content; }
+  }
+  @else if $media == xl {
+    @media only screen and (max-width: $screen-xl-max) { @content; }
+  }
+   @else if $media == xxl {
+    @media only screen and (max-width: $screen-xxl-max) { @content; }
+  }
+}
