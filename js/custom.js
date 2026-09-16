@@ -28,7 +28,7 @@ $('.tab ul li').click(function(){
 $('.six-section .owl-carousel').owlCarousel({
     loop:true,
     margin:10,
-    nav:true,
+    nav:false,
     autoplay:true,
     autoplayTimeout:3000,
     responsive:{
@@ -44,16 +44,19 @@ $('.six-section .owl-carousel').owlCarousel({
 $('.seven-section .owl-carousel').owlCarousel({
     loop:true,
     margin:20,
-    nav:true,
+    nav:false,
     autoplay:true,
     autoplayTimeout:3000,
     responsive:{
         0:{
             items:1
         },
-        768:{
+        640:{
+            items:2
+        },
+        980:{
             items:3
-        }
+        },
     }
 })
 
