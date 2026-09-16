@@ -57,6 +57,24 @@ h6 {
   vertical-align: middle;
 }
 
+.animatable {
+  /* initially hide animatable objects */
+  visibility: hidden;
+
+  /* initially pause animatable objects their animations */
+  animation-play-state: paused;
+}
+
+/* show objects being animated */
+.animated {
+  visibility: visible;
+
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-play-state: running;
+}
+
+
 @media (min-width: 768px) {
   .open-menu {
     display: none;
